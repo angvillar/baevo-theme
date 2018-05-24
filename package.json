@@ -1,0 +1,24 @@
+{
+  "name": "baevo-theme",
+  "version": "1.0.0",
+  "description": "wordpress theme for baevo.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "baevo",
+    "wordpress",
+    "theme"
+  ],
+  "author": "baevo",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3"
+  }
+}
