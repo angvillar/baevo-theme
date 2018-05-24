@@ -20,11 +20,25 @@ class StarterSite extends TimberSite {
   }
 
   function loadScripts() {
-    /*
+    // bootstrap css
     wp_enqueue_style(
         'bootstrap-css' 
       , get_template_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap.min.css'
     );
+    // baevo css
+    wp_enqueue_style(
+      'baevo-style'
+    , get_stylesheet_uri()
+    );
+    // popper
+    wp_enqueue_script(
+       'popper' 
+      , get_template_directory_uri() . '/node_modules/popper.js/dist/popper.min.js'
+      , array()
+      , false
+      , true
+    );
+    // jquery
     wp_enqueue_script(
        'jquery' 
       , get_template_directory_uri() . '/node_modules/jquery/dist/jquery.min.js'
@@ -32,6 +46,7 @@ class StarterSite extends TimberSite {
       , false
       , true
     );
+    // bootstrap js
     wp_enqueue_script(
         'bootstrap-js' 
       , get_template_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.min.js'
@@ -39,6 +54,7 @@ class StarterSite extends TimberSite {
       , false
       , true
     );
+    /*
     wp_enqueue_script(
       'parsleyjs' 
       , get_template_directory_uri() . '/node_modules/parsleyjs/dist/parsley.min.js'
@@ -47,10 +63,6 @@ class StarterSite extends TimberSite {
       , true
     );
     */
-    wp_enqueue_style(
-        'baevo-style'
-      , get_stylesheet_uri()
-    );
   } 
 
 }
