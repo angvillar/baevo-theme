@@ -2,6 +2,17 @@
 
 {% block content %}
   <div class="container">
+    <ul class="nav">
+      {% for menu_item in menu_primary.items %}
+        <li class="nav-item">
+          <a 
+            class="nav-link {% if menu_item.current %} active {% endif %}"
+            href="{{ menu_item.link }}">
+              {{ menu_item.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
     <h1>{{ cover.tagline }}</h1>
   </div>
 {% endblock %}
