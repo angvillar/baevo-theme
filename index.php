@@ -8,8 +8,8 @@ $context['portfolio'] = Timber::get_posts(array(
   'post_status' => 'publish',
   'posts_per_page' => '10'
 ));
-
 $context['section_about'] = get_field('section_about');
+$context['section_contact'] = get_field('section_contact');
 
 Timber::render( 'index.twig', $context );
 

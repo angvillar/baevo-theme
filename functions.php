@@ -37,6 +37,21 @@ class StarterSite extends TimberSite {
     );
     register_post_type('portfolio', $portfolio_args);
 
+    // Contact form
+    $contacts_labels = array( 
+      'name'          => 'Contacts',
+      'singular_name' => 'Contact',
+      'menu_name'     => 'Contacts'
+    );
+    $contacts_args = array(
+      'labels'             => $contacts_labels,
+      'public'             => true,
+      'capability_type'    => 'post',
+      'has_archive'        => true,
+      'supports'           => array('title')
+    );
+    register_post_type('contacts', $contacts_args);
+
 	}
 
   function loadScripts() {
@@ -74,7 +89,7 @@ class StarterSite extends TimberSite {
       , false
       , true
     );
-    /*
+    // parsley
     wp_enqueue_script(
       'parsleyjs' 
       , get_template_directory_uri() . '/node_modules/parsleyjs/dist/parsley.min.js'
@@ -82,7 +97,6 @@ class StarterSite extends TimberSite {
       , false
       , true
     );
-    */
   } 
 
 }
@@ -94,3 +108,5 @@ new StarterSite();
  * Requires at least version ACF 4.4.12 to work
  */
 define('ACF_EARLY_ACCESS', '5');
+
+require_once( __DIR__ . '/inc/functions-contact-form.php' );

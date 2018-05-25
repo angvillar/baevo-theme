@@ -1,6 +1,7 @@
 {% extends "base.twig" %}
 
 {% block content %}
+  {{ function('acf_form_head') }}
   <div class="container">
     <ul class="nav">
       {% for menu_item in menu_primary.items %}
@@ -38,20 +39,26 @@
     <h2>{{ section_about.title }}</h2>
     <p>{{ section_about.subtitle }}</p>
     <div class="row">
-    {% for worker in section_about.workers %}
-      <div class="col-12">
-        <img 
-          class="img-fluid"
-          width="150"
-          height="150"
-          src="{{ TimberImage(worker.image).src }}" 
-          alt="{{ TimberImage(worker.image).alt }}" 
-        />
-        <h5>{{ worker.name }}</h5>
-        <p class="small">{{ worker.work }}</p>
-        <p>{{ worker.description }}</p>
-      </div>
-    {% endfor %}
+      {% for worker in section_about.workers %}
+        <div class="col-12">
+          <img 
+            class="img-fluid"
+            width="150"
+            height="150"
+            src="{{ TimberImage(worker.image).src }}" 
+            alt="{{ TimberImage(worker.image).alt }}" 
+          />
+          <h5>{{ worker.name }}</h5>
+          <p class="small">{{ worker.work }}</p>
+          <p>{{ worker.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
   </div>
+
+  <div class="container">
+    <h2>{{ section_contact.title }}</h2>
+    <p>{{ section_contact.subtitle }}</p>
+    {{ function('acf_form', 'new-contact') }}
   </div>
 {% endblock %}
