@@ -9,6 +9,8 @@ $context['portfolio'] = Timber::get_posts(array(
   'posts_per_page' => '10'
 ));
 
+$context['section_about'] = get_field('section_about');
+
 Timber::render( 'index.twig', $context );
 
 ?>
