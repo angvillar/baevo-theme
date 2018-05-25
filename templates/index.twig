@@ -13,6 +13,24 @@
         </li>
       {% endfor %}
     </ul>
-    <h1>{{ cover.tagline }}</h1>
+    <h1>{{ section_cover.tagline }}</h1>
+  </div>
+
+  <div class="container">
+    <h2>{{ section_portfolio.title }}</h2>
+    <p>{{ section_portfolio.subtitle }}</p>
+    <div class="row">
+      {% for portfolio_item in portfolio %}
+        <div class="col-6">
+          <h5>{{ portfolio_item.title }}</h5>
+          <p>{{ portfolio_item.terms('category') | join(', ') }}</p>
+          <img 
+            class="img-fluid"
+            src="{{ TimberImage(portfolio_item.get_field('image')).src }}" 
+            alt="{{ TimberImage(portfolio_item.get_field('image')).alt }}" 
+          />
+        </div>
+      {% endfor %}
+    </div>
   </div>
 {% endblock %}

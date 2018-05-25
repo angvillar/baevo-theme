@@ -9,6 +9,7 @@ class StarterSite extends TimberSite {
   function __construct() {
   
     add_filter( 'timber_context', array( $this, 'add_to_context' ) );
+    add_action( 'init', array( $this, 'register_post_types' ) );
     add_action( 'wp_enqueue_scripts', array( $this, 'loadScripts' ) );
     parent::__construct();
   }
@@ -18,6 +19,25 @@ class StarterSite extends TimberSite {
     $context['site'] = $this;
     return $context;
   }
+
+  function register_post_types() {
+		// Register Portfolio
+    $portfolio_labels = array(
+      'name'               => 'Portfolio',
+      'singular_name'      => 'Portfolio Item',
+      'menu_name'          => 'Portfolio'
+    );
+    $portfolio_args = array(
+      'labels'             => $portfolio_labels,
+      'public'             => true,
+      'capability_type'    => 'post',
+      'has_archive'        => true,
+      'supports'           => array( 'title', 'thumbnail', 'revisions' ),
+      'taxonomies'          => array( 'category')
+    );
+    register_post_type('portfolio', $portfolio_args);
+
+	}
 
   function loadScripts() {
     // bootstrap css
