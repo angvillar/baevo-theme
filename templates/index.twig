@@ -18,6 +18,19 @@
   </div>
 
   <div class="container">
+    <h2>{{ section_services.title }}</h2>
+    <p>{{ section_services.subtitle }}</p>
+    <div class="row">
+      {% for service in section_services.services %}
+        <div class="col-12">
+          <h5>{{ service.title }}</h5>
+          <p>{{ service.description}}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="container">
     <h2>{{ section_portfolio.title }}</h2>
     <p>{{ section_portfolio.subtitle }}</p>
     <div class="row">
