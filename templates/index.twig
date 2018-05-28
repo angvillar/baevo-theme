@@ -2,76 +2,143 @@
 
 {% block content %}
   {{ function('acf_form_head') }}
-  <div class="container">
-    <ul class="nav">
-      {% for menu_item in menu_primary.items %}
-        <li class="nav-item">
-          <a 
-            class="nav-link {% if menu_item.current %} active {% endif %}"
-            href="{{ menu_item.link }}">
-              {{ menu_item.title }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-    <h1>{{ section_cover.tagline }}</h1>
-  </div>
-
-  <div class="container">
-    <h2>{{ section_services.title }}</h2>
-    <p>{{ section_services.subtitle }}</p>
-    <div class="row">
-      {% for service in section_services.services %}
-        <div class="col-12">
-          <h5>{{ service.title }}</h5>
-          <p>{{ service.description}}</p>
-        </div>
-      {% endfor %}
+  <section class="hero hero-fullheight bg-dark text-white">
+    <div class="hero-head">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">baevo</a>
+          <button 
+            class="navbar-toggler" 
+            type="button" 
+            data-toggle="collapse" 
+            data-target="#navbarNav" 
+            aria-controls="navbarNav" 
+            aria-expanded="false" 
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              {% for menu_item in menu_primary.items %}
+                <li class="nav-item">
+                  <a 
+                    class="nav-link {% if menu_item.current %} active {% endif %}"
+                    href="{{ menu_item.link }}">
+                      {{ menu_item.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>          
+      </nav>
     </div>
-  </div>
-
-  <div class="container">
-    <h2>{{ section_portfolio.title }}</h2>
-    <p>{{ section_portfolio.subtitle }}</p>
-    <div class="row">
-      {% for portfolio_item in portfolio %}
-        <div class="col-6">
-          <h5>{{ portfolio_item.title }}</h5>
-          <p>{{ portfolio_item.terms('category') | join(', ') }}</p>
-          <img 
-            class="img-fluid"
-            src="{{ TimberImage(portfolio_item.get_field('image')).src }}" 
-            alt="{{ TimberImage(portfolio_item.get_field('image')).alt }}" 
-          />
-        </div>
-      {% endfor %}
+    <div class="hero-body">
+      <div class="container">
+        <h1>{{ section_cover.tagline }}</h1>
+      </div>
     </div>
-  </div>
-
-  <div class="container">
-    <h2>{{ section_about.title }}</h2>
-    <p>{{ section_about.subtitle }}</p>
-    <div class="row">
-      {% for worker in section_about.workers %}
-        <div class="col-12">
-          <img 
-            class="img-fluid"
-            width="150"
-            height="150"
-            src="{{ TimberImage(worker.image).src }}" 
-            alt="{{ TimberImage(worker.image).alt }}" 
-          />
-          <h5>{{ worker.name }}</h5>
-          <p class="small">{{ worker.work }}</p>
-          <p>{{ worker.description }}</p>
+  </section>
+  
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6">
+          <h2>{{ section_services.title }}</h2>
+          <p>{{ section_services.subtitle }}</p>
         </div>
-      {% endfor %}
+        <div class="col-12 col-md-6">
+          {% for service in section_services.services %}
+            <h5>{{ service.title }}</h5>
+            <p>{{ service.description}}</p>         
+          {% endfor %}
+         </div>
+      </div>
     </div>
-  </div>
+  </section>
+  
+  <section class="section bg-light" id="portfolio">
+    <div class="container">
+      <div class="row" style="margin-bottom: 9rem">
+        <div class="col-12 col-md-6 offset-md-3 text-center">
+          <h2>{{ section_portfolio.title }}</h2>
+          <p>{{ section_portfolio.subtitle }}</p>
+        </div>
+      </div>
+      <ul class="row list-unstyled">
+        {% for portfolio_item in portfolio %}
+          <li class="col-12 col-md-6">
+            <figure>
+              <img 
+                class="img-fluid"
+                src="{{ TimberImage(portfolio_item.get_field('image')).src }}" 
+                alt="{{ TimberImage(portfolio_item.get_field('image')).alt }}" 
+              />
+              <figcaption>
+                <div class="figcaption-content text-center">
+                  <h5>{{ portfolio_item.title }}</h5>
+                  <p>{{ portfolio_item.terms('category') | join(', ') }}</p>
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
 
-  <div class="container">
-    <h2>{{ section_contact.title }}</h2>
-    <p>{{ section_contact.subtitle }}</p>
-    {{ function('acf_form', 'new-contact') }}
-  </div>
+  <section class="section" id="sobre-nosotros">
+    <div class="container">
+      <div class="row" style="margin-bottom: 9rem">
+        <div class="col-12 col-md-6 offset-md-3 text-center">
+          <h2>{{ section_about.title }}</h2>
+          <p>{{ section_about.subtitle }}</p>
+        </div>
+      </div>
+      <ul class="row list-unstyled"> 
+        {% for worker in section_about.workers %}
+          <li class="col-12 col-md-4 text-center">
+            <img 
+              class="img-fluid"
+              width="150"
+              height="150"
+              src="{{ TimberImage(worker.image).src }}" 
+              alt="{{ TimberImage(worker.image).alt }}" 
+            />
+            <h5>{{ worker.name }}</h5>
+            <p class="small">{{ worker.work }}</p>
+            <p>{{ worker.description }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  
+  <section class="section bg-light" id="contacto">
+    <div class="container">
+      <div class="row" style="margin-bottom: 9rem">
+        <div class="col-12 col-md-6 offset-md-3 text-center">
+          <h2>{{ section_contact.title }}</h2>
+          <p>{{ section_contact.subtitle }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h5>informacion de contacto</h5>
+          <p>
+            {{ section_contact.email }}
+            <br/>
+            {{ section_contact.address }}
+            <br/>
+            {{ section_contact.phone }}
+          </p>
+        </div>
+        <div class="col-12 col-md-6">
+          <h5>escribenos un mensaje</h5>
+          {{ function('acf_form', 'new-contact') }}
+        </div>
+      </div>
+    </div>
+  </section>
 {% endblock %}

@@ -56,10 +56,12 @@ class StarterSite extends TimberSite {
 
   function loadScripts() {
     // bootstrap css
+    /*
     wp_enqueue_style(
         'bootstrap-css' 
       , get_template_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap.min.css'
     );
+    */
     // baevo css
     wp_enqueue_style(
       'baevo-style'

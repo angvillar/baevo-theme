@@ -4,7 +4,8 @@
   "description": "wordpress theme for baevo.com",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css:watch": "node-sass scss/style.scss -wo ./"
   },
   "keywords": [
     "baevo",
