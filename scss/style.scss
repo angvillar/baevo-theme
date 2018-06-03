@@ -11,6 +11,20 @@ Text Domain: underscores
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
 
+@font-face {
+  font-family: 'DIN Pro Condensed Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('DIN Pro Condensed Bold'), url('./fonts/DINPro-CondBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'DIN Pro Condensed Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('DIN Pro Condensed Regular'), url('./fonts/DINPro-Cond.woff') format('woff');
+}
+
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "custom-bootstrap";
@@ -48,9 +62,89 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 @import "../node_modules/bootstrap/scss/carousel";
 @import "../node_modules/bootstrap/scss/utilities";
 
+// typography
+@import "type";
+
+// deco
+@import "deco";
+
 // components
 @import "./components/bootstrap-hero/hero";
 @import "./components/bootstrap-section/section";
+
+/*
+ * Could be a good idea to remove all margin bottom for elements like
+ * hi and p because a lot of compoenets uses this elements and have
+ * to put his on margins which depends on context
+ * for normal text i can use a text class which includes the margin bottom
+ * for all typo elements.
+ */
+html {
+  font-size: 16px;
+}
+
+.section-head {
+  margin-bottom: map-get($spacers, 5);
+}
+
+.section-body-indent {
+  position: relative;
+ 
+  @include media-breakpoint-up(md) { 
+    // this should user $spacers map but the biggest margin is 5
+    // which is 48 px, so create a new spacer
+    padding-left: 64px;
+  }
+}
+
+.section-from {
+  margin-bottom: map-get($spacers, 4);
+}
+
+.section-deco {
+  display: inline-block;
+  position: relative;
+  top: -4px;
+  left: 0;
+  margin-right: 12px;
+  @include media-breakpoint-up(md) { 
+    position: absolute;
+    top: 12px;
+    left: 0;
+    display: block;
+  }
+}
+
+.section-link {
+  text-align: center;
+  display: block;
+}
+
+/*
+ * problem: the question-item boxes do not have equal height columns
+ * when one question spans 2 lines and other 1 line. 
+ */
+.question-item {
+  border: 2px solid rgb(246, 246, 246);
+  padding: 2rem;
+}
+
+// this not works because the las item has .h3 class
+// which gives a margin bottom to the last element
+// and have preference over this rule
+// as rapid solution i put mb-0 on the last element
+/*
+.question-item:last-child {
+  margin-bottom: 0;
+}
+*/
+
+
+.footer-caption {
+  color: rgba(17,21,23,.27);
+  margin-top: .5em;
+  display: block;
+}
 
 figure {
   overflow: hidden;
@@ -86,4 +180,22 @@ figure:hover img {
   top: 50%;
   transform: translateY(-50%); 
   width: 100%;
+}
+
+
+.square {
+  width: 100%;
+  position: relative;
+}
+
+.square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.square-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }

@@ -1,0 +1,27 @@
+.deco-line-1 {
+  margin-bottom: map-get($spacers, 2);
+  height: 2px;
+  max-width: 1rem;
+  display: block;
+  background-color: #111517;
+}
+
+.deco-line-2 {
+  background-color: rgb(246, 246, 246);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 1px;
+  width: 32px;
+  display: block;
+}
+
+.deco-line-3 {
+  background-color: #111517;
+  width: 48px;
+  height: 2px;
+}
+
+.deco-line-4 {
+  padding-left: 10px;
+  padding-right: 10px;
+}

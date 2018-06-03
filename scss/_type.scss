@@ -1,0 +1,56 @@
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+
+.tiny {
+  font-size: 60%;
+}
+
+// meta
+.txt-1 {
+  font-family: 'DIN Pro Condensed Regular', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+
+// equipo baevo
+.txt-2 {
+  font-family: 'DIN Pro Condensed Bold', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+// copyright
+.txt-3 {
+  font-family: 'DIN Pro Condensed Regular', sans-serif;
+  font-weight: 400;
+  letter-spacing: .08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+// link more
+.txt-5 {
+  font-family: 'DIN Pro Condensed Regular', sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+// nav link
+.txt-6 {
+  font-family: 'DIN Pro Condensed Regular', sans-serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  line-height: 1;
+}

@@ -10,6 +10,18 @@ License URI: LICENSE
 Text Domain: underscores
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 */
+@font-face {
+  font-family: 'DIN Pro Condensed Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local("DIN Pro Condensed Bold"), url("./fonts/DINPro-CondBold.woff") format("woff"); }
+
+@font-face {
+  font-family: 'DIN Pro Condensed Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local("DIN Pro Condensed Regular"), url("./fonts/DINPro-Cond.woff") format("woff"); }
+
 @media print {
   *,
   *::before,
@@ -89,7 +101,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Oxygen", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -107,7 +119,7 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 1.5rem; }
 
 p {
   margin-top: 0;
@@ -332,20 +344,20 @@ template {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: 0.5rem;
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  font-family: "DIN Pro Condensed Bold", sans-serif;
+  font-weight: 700;
+  line-height: 1;
   color: inherit; }
 
 h1, .h1 {
-  font-size: 2.5rem; }
+  font-size: 3.5rem; }
 
 h2, .h2 {
-  font-size: 2rem; }
+  font-size: 3rem; }
 
 h3, .h3 {
-  font-size: 1.75rem; }
+  font-size: 1.5rem; }
 
 h4, .h4 {
   font-size: 1.5rem; }
@@ -362,7 +374,7 @@ h6, .h6 {
 
 .display-1 {
   font-size: 6rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2; }
 
 .display-2 {
@@ -372,7 +384,7 @@ h6, .h6 {
 
 .display-3 {
   font-size: 4.5rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.2; }
 
 .display-4 {
@@ -3872,7 +3884,7 @@ button.close {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Oxygen", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -3957,7 +3969,7 @@ button.close {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Oxygen", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -6258,6 +6270,75 @@ a.text-dark:hover, a.text-dark:focus {
 .invisible {
   visibility: hidden !important; }
 
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  text-transform: uppercase;
+  letter-spacing: .03em; }
+
+.tiny {
+  font-size: 60%; }
+
+.txt-1 {
+  font-family: 'DIN Pro Condensed Regular', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: .03em;
+  text-transform: uppercase; }
+
+.txt-2 {
+  font-family: 'DIN Pro Condensed Bold', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase; }
+
+.txt-3 {
+  font-family: 'DIN Pro Condensed Regular', sans-serif;
+  font-weight: 400;
+  letter-spacing: .08em;
+  line-height: 1;
+  text-transform: uppercase; }
+
+.txt-5 {
+  font-family: 'DIN Pro Condensed Regular', sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  letter-spacing: .05em;
+  text-transform: uppercase; }
+
+.txt-6 {
+  font-family: 'DIN Pro Condensed Regular', sans-serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  line-height: 1; }
+
+.deco-line-1 {
+  margin-bottom: 0.5rem;
+  height: 2px;
+  max-width: 1rem;
+  display: block;
+  background-color: #111517; }
+
+.deco-line-2 {
+  background-color: #f6f6f6;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  height: 1px;
+  width: 32px;
+  display: block; }
+
+.deco-line-3 {
+  background-color: #111517;
+  width: 48px;
+  height: 2px; }
+
+.deco-line-4 {
+  padding-left: 10px;
+  padding-right: 10px; }
+
 .hero {
   align-items: stretch;
   display: flex;
@@ -6302,13 +6383,70 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 3rem 1.5rem; }
 
 .section {
-  padding: 3rem 1.5rem; }
+  padding: 3rem 0rem; }
   @media (min-width: 991.98px) {
     .section {
-      padding: 9rem 1.5rem; } }
+      padding: 9rem 0rem; } }
   @media (min-width: 1199.98px) {
     .section {
-      padding: 18rem 1.5rem; } }
+      padding: 18rem 0rem; } }
+
+/*
+ * Could be a good idea to remove all margin bottom for elements like
+ * hi and p because a lot of compoenets uses this elements and have
+ * to put his on margins which depends on context
+ * for normal text i can use a text class which includes the margin bottom
+ * for all typo elements.
+ */
+html {
+  font-size: 16px; }
+
+.section-head {
+  margin-bottom: 3rem; }
+
+.section-body-indent {
+  position: relative; }
+  @media (min-width: 768px) {
+    .section-body-indent {
+      padding-left: 64px; } }
+
+.section-from {
+  margin-bottom: 1.5rem; }
+
+.section-deco {
+  display: inline-block;
+  position: relative;
+  top: -4px;
+  left: 0;
+  margin-right: 12px; }
+  @media (min-width: 768px) {
+    .section-deco {
+      position: absolute;
+      top: 12px;
+      left: 0;
+      display: block; } }
+
+.section-link {
+  text-align: center;
+  display: block; }
+
+/*
+ * problem: the question-item boxes do not have equal height columns
+ * when one question spans 2 lines and other 1 line. 
+ */
+.question-item {
+  border: 2px solid #f6f6f6;
+  padding: 2rem; }
+
+/*
+.question-item:last-child {
+  margin-bottom: 0;
+}
+*/
+.footer-caption {
+  color: rgba(17, 21, 23, 0.27);
+  margin-top: .5em;
+  display: block; }
 
 figure {
   overflow: hidden;
@@ -6337,3 +6475,17 @@ figure:hover img {
   top: 50%;
   transform: translateY(-50%);
   width: 100%; }
+
+.square {
+  width: 100%;
+  position: relative; }
+
+.square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%; }
+
+.square-content {
+  position: absolute;
+  width: 100%;
+  height: 100%; }

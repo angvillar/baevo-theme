@@ -23,7 +23,7 @@
               {% for menu_item in menu_primary.items %}
                 <li class="nav-item">
                   <a 
-                    class="nav-link {% if menu_item.current %} active {% endif %}"
+                    class="txt-6 nav-link {% if menu_item.current %} active {% endif %}"
                     href="{{ menu_item.link }}">
                       {{ menu_item.title }}
                   </a>
@@ -36,7 +36,7 @@
     </div>
     <div class="hero-body">
       <div class="container">
-        <h1>{{ section_cover.tagline }}</h1>
+        <h1 class="display-4 text-uppercase">{{ section_cover.tagline }}</h1>
       </div>
     </div>
   </section>
@@ -44,15 +44,26 @@
   <section class="section" id="servicios">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-12 col-md-6">
-          <h2>{{ section_services.title }}</h2>
-          <p>{{ section_services.subtitle }}</p>
+        <div class="col-12 col-md-8 mb-5">
+          <div class="section-head">
+            <span class="deco-line-1"></span>
+            <span class="txt-1">nuestros servicios</span> <!-- section subtitle -->
+          </div>
+          <h2 class="h1">{{ section_services.title }}</h2>
+          <p>{{ section_services.subtitle  }}</p>
         </div>
-        <div class="col-12 col-md-6">
-          {% for service in section_services.services %}
-            <h5>{{ service.title }}</h5>
-            <p>{{ service.description}}</p>         
-          {% endfor %}
+        <div class="col-12">
+          <div class="row">
+            {% for service in section_services.services %}
+              <div class="col-12 col-md-6 mb-5">
+                <div class="question-item">
+                  <span class="small">{{ service.title }}</span>
+                  <span class="deco-line-2"></span>
+                  <p class="h3 mb-0">{{ service.description}}</p>
+                </div>
+              </div>         
+            {% endfor %}
+          </div>
          </div>
       </div>
     </div>
@@ -60,10 +71,17 @@
   
   <section class="section bg-light" id="portfolio">
     <div class="container">
-      <div class="row" style="margin-bottom: 9rem">
-        <div class="col-12 col-md-6 offset-md-3 text-center">
-          <h2>{{ section_portfolio.title }}</h2>
-          <p>{{ section_portfolio.subtitle }}</p>
+      <div class="row mb-5">
+        <div class="col-12 col-md-6">
+          <!-- this mb-4 should be part of the component not of the h1 -->
+          <h2 class="h1 mb-4">{{ section_portfolio.title }}</h2>
+          <div class="section-body-indent">
+            <div class="section-from">
+              <span class="section-deco deco-line-3"></span>
+              <span class="txt-2">equipo de baevo</span>
+            </div>
+            <p>{{ section_portfolio.subtitle }}</p>
+          </div>
         </div>
       </div>
       <ul class="row list-unstyled">
@@ -77,65 +95,114 @@
               />
               <figcaption>
                 <div class="figcaption-content text-center">
-                  <h5>{{ portfolio_item.title }}</h5>
-                  <p>{{ portfolio_item.terms('category') | join(', ') }}</p>
+                  <h5 class="h3">{{ portfolio_item.title }}</h5>
+                  <p class="small">{{ portfolio_item.terms('category') | join(', ') }}</p>
                 </div>
               </figcaption>
             </figure>
           </li>
         {% endfor %}
       </ul>
+      <a href="#" class="section-link txt-5">explora mas trabajos</a>
     </div>
   </section>
 
-  <section class="section" id="sobre-nosotros">
+  <section class="section bg-dark text-white"> 
     <div class="container">
-      <div class="row" style="margin-bottom: 9rem">
-        <div class="col-12 col-md-6 offset-md-3 text-center">
-          <h2>{{ section_about.title }}</h2>
+      <div class="row">
+        <div class="col-12 col-md-6" style="margin-bottom: 9rem">
+          <h2 class="h1">{{ section_about.title }}</h2>
           <p>{{ section_about.subtitle }}</p>
         </div>
+        <div class="col-12 col-md-4 offset-md-8">
+          <blockquote class="blockquote">
+          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+          </blockquote>
+        </div>
+      </div>    
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="square">
+            <div class="square-content">
+              <div class="h-100 d-flex flex-column p-3">
+                <h2 class="mt-auto mb-0">tu idea <br/> nuestra pasion</h2>
+              </div>
+            </div>
+          </div>        
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="square">
+            <div class="square-content">
+              <div class="text-white bg-secondary h-100 d-flex flex-column p-3">
+                <span class="small">Cultura</span>
+                <p class="h3 mt-auto mb-0">creemos en ti<br/> y en tu negocio</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="square">
+            <div class="square-content">
+              <div class="text-white bg-light h-100 d-flex flex-column p-3">
+                <span class="small">Filosofia</span>
+                <p class="h3 mt-auto mb-0">sino lo necesitas<br/> no intentaremos vendertelo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="square">
+            <div class="square-content">
+              <div class="text-white bg-dark h-100 d-flex flex-column p-3">
+                <span class="small">Proceso</span>
+                <p class="h3 mt-auto mb-0">mantenemos tu negocio<br/> relevante ante <br /> cualquier cambio</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <ul class="row list-unstyled"> 
-        {% for worker in section_about.workers %}
-          <li class="col-12 col-md-4 text-center">
-            <img 
-              class="img-fluid"
-              width="150"
-              height="150"
-              src="{{ TimberImage(worker.image).src }}" 
-              alt="{{ TimberImage(worker.image).alt }}" 
-            />
-            <h5>{{ worker.name }}</h5>
-            <p class="small">{{ worker.work }}</p>
-            <p>{{ worker.description }}</p>
-          </li>
-        {% endfor %}
-      </ul>
     </div>
   </section>
   
   <section class="section bg-light" id="contacto">
     <div class="container">
-      <div class="row" style="margin-bottom: 9rem">
-        <div class="col-12 col-md-6 offset-md-3 text-center">
-          <h2>{{ section_contact.title }}</h2>
-          <p>{{ section_contact.subtitle }}</p>
+      <div class="row mb-5">
+        <div class="col-12 col-md-6">
+          <!-- this mb-4 should be part of the component not of the h1 -->
+          <h2 class="h1 mb-4">{{ section_contact.title }}</h2>
+          <div class="section-body-indent">
+            <div class="section-from">
+              <span class="section-deco deco-line-3"></span>
+              <span class="txt-2">equipo de baevo</span>
+            </div>
+            <p>{{ section_contact.subtitle }}</p>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-12 col-md-6">
-          <h5>informacion de contacto</h5>
-          <p>
-            {{ section_contact.email }}
-            <br/>
-            {{ section_contact.address }}
-            <br/>
+          
+          <p class="small">
+            Marques de Mondejar
+            <br />
+            Piso 5A
+            <br />
+            Madrid, 28028
+            <br />
+            <br />
             {{ section_contact.phone }}
+            <br />
+            <span class="font-weight-bold">{{ section_contact.email }}</span>
           </p>
         </div>
         <div class="col-12 col-md-6">
-          <h5>escribenos un mensaje</h5>
+         
           {{ function('acf_form', 'new-contact') }}
         </div>
       </div>
