@@ -87,14 +87,14 @@
       <ul class="row list-unstyled">
         {% for portfolio_item in portfolio %}
           <li class="col-12 col-md-6">
-            <figure>
+            <figure class="thumb">
               <img 
-                class="img-fluid"
+                class="thumb-img img-fluid"
                 src="{{ TimberImage(portfolio_item.get_field('image')).src }}" 
                 alt="{{ TimberImage(portfolio_item.get_field('image')).alt }}" 
               />
-              <figcaption>
-                <div class="figcaption-content text-center">
+              <figcaption class="thumb-inner">
+                <div class="thumb-content text-center">
                   <h5 class="h3">{{ portfolio_item.title }}</h5>
                   <p class="small">{{ portfolio_item.terms('category') | join(', ') }}</p>
                 </div>

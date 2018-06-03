@@ -71,6 +71,8 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 // components
 @import "./components/bootstrap-hero/hero";
 @import "./components/bootstrap-section/section";
+@import "./components/thumb/thumb";
+@import "./components/square/square";
 
 /*
  * Could be a good idea to remove all margin bottom for elements like
@@ -144,58 +146,4 @@ html {
   color: rgba(17,21,23,.27);
   margin-top: .5em;
   display: block;
-}
-
-figure {
-  overflow: hidden;
-  position: relative;
-  //margin-bottom: 0;
-}
-
-figure img {
-  transition: all .2s ease-in-out;
-}
-
-figcaption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  //bottom: 0;
-  top: -100%;
-  background-color: rgba(0, 0, 0,0.5);
-  color: white;
-}
-
-figure:hover figcaption {
-  bottom: 0;
-  top: 0;
-}
-
-figure:hover img {
-  transform: scale(1.1); 
-}
-
-.figcaption-content {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%); 
-  width: 100%;
-}
-
-
-.square {
-  width: 100%;
-  position: relative;
-}
-
-.square:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
-}
-
-.square-content {
-  position: absolute;
-  width: 100%;
-  height: 100%;
 }
