@@ -112,7 +112,13 @@
       <div class="row">
         <div class="col-12 col-md-6" style="margin-bottom: 9rem">
           <h2 class="h1">{{ section_about.title }}</h2>
-          <p>{{ section_about.subtitle }}</p>
+          <div class="section-body-indent">
+            <div class="section-from">
+              <span class="section-deco deco-line-3"></span>
+              <span class="txt-2">baevo CEO</span>
+            </div>
+            <p>{{ section_about.subtitle }}</p>
+          </div>
         </div>
         <div class="col-12 col-md-4 offset-md-8">
           <blockquote class="blockquote">
@@ -126,7 +132,7 @@
 
   <section class="section">
     <div class="container">
-      <div class="row">
+      <div class="row no-gutters">
         <div class="col-12 col-md-6">
           <div class="square">
             <div class="square-content">
@@ -139,7 +145,7 @@
         <div class="col-12 col-md-6">
           <div class="square">
             <div class="square-content">
-              <div class="text-white bg-secondary h-100 d-flex flex-column p-3">
+              <div class="text-white bg-gray-600 h-100 d-flex flex-column p-3">
                 <span class="small">Cultura</span>
                 <p class="h3 mt-auto mb-0">creemos en ti<br/> y en tu negocio</p>
               </div>
@@ -149,7 +155,7 @@
         <div class="col-12 col-md-6">
           <div class="square">
             <div class="square-content">
-              <div class="text-white bg-light h-100 d-flex flex-column p-3">
+              <div class="text-white bg-dark h-100 d-flex flex-column p-3">
                 <span class="small">Filosofia</span>
                 <p class="h3 mt-auto mb-0">sino lo necesitas<br/> no intentaremos vendertelo</p>
               </div>
@@ -159,7 +165,7 @@
         <div class="col-12 col-md-6">
           <div class="square">
             <div class="square-content">
-              <div class="text-white bg-dark h-100 d-flex flex-column p-3">
+              <div class="text-white bg-primary h-100 d-flex flex-column p-3">
                 <span class="small">Proceso</span>
                 <p class="h3 mt-auto mb-0">mantenemos tu negocio<br/> relevante ante <br /> cualquier cambio</p>
               </div>
@@ -170,24 +176,11 @@
     </div>
   </section>
   
-  <section class="section bg-light" id="contacto">
+  <section class="section" id="contacto">
+    <h2 class="display-5 text-center" style="margin-bottom: 9rem;">empieza ahora</h2>
     <div class="container">
-      <div class="row mb-5">
-        <div class="col-12 col-md-6">
-          <!-- this mb-4 should be part of the component not of the h1 -->
-          <h2 class="h1 mb-4">{{ section_contact.title }}</h2>
-          <div class="section-body-indent">
-            <div class="section-from">
-              <span class="section-deco deco-line-3"></span>
-              <span class="txt-2">equipo de baevo</span>
-            </div>
-            <p>{{ section_contact.subtitle }}</p>
-          </div>
-        </div>
-      </div>
       <div class="row">
-        <div class="col-12 col-md-6">
-          
+        <div class="col-12 col-md-6 ">
           <p class="small">
             Marques de Mondejar
             <br />
@@ -202,7 +195,6 @@
           </p>
         </div>
         <div class="col-12 col-md-6">
-         
           {{ function('acf_form', 'new-contact') }}
         </div>
       </div>

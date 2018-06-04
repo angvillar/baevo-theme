@@ -16,7 +16,7 @@
 }
 
 .deco-line-3 {
-  background-color: #111517;
+  background-color: map-get($theme-colors, "primary");
   width: 48px;
   height: 2px;
 }

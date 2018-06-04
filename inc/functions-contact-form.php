@@ -11,7 +11,7 @@ add_action( 'wp_print_styles', 'disable_acf_frontend_forms_css', 100 );
 
 function my_acf_load_field( $field ) {
   if( ! is_admin() ){
-    $field['class'] = 'form-control';
+    $field['class'] = 'form-control form-control-minimal';
     $field['wrapper']['class'] .= ' form-group';
   }
   return $field;
@@ -38,7 +38,7 @@ acf_register_form(array(
 	),
 	'post_title'=> false,
   'post_content'=> false,
-  'submit_value'	=> 'Submit',
+  'submit_value'	=> 'consulta gratuita',
   'fields' => array('name', 'email', 'content'),
 ));
 
